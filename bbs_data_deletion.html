@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Salon Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #f44336;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #f44336;
+    }
+
+    .email-link {
+      color: #2196f3;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .note {
+      color: red;
+      font-weight: bold;
+    }
+
+    .button {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+      text-align: center;
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .button {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Delete Salon Request</h1>
+
+    <p><span class="highlight">To delete your salon from our platform:</span></p>
+    <p>Please send an email requesting salon deletion. Make sure to include your salon name, registered email, and a brief reason for deletion.</p>
+
+    <p><span class="highlight">Send your request to:</span></p>
+    <p>
+      <span class="email-link" id="adminEmail">beautybookingsystem@gmail.com</span>
+      <button class="button" onclick="copyEmail()">Copy email</button>
+    </p>
+
+    <p>Once your email is reviewed, the BBS admin will remove all your salon details from our system permanently.</p>
+
+    <p><span class="note">Note: This action is irreversible.</span></p>
+  </div>
+
+  <script>
+    function copyEmail() {
+      var email = document.getElementById("adminEmail").innerText;
+      navigator.clipboard.writeText(email).then(function() {
+        alert("Email copied to clipboard!");
+      }, function() {
+        alert("Failed to copy email.");
+      });
+    }
+  </script>
+
+</body>
+</html>
